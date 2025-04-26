@@ -54,10 +54,18 @@ header {
 	}
 }
 
+header h2 {
+    font-size: 175%;
+    color: var(--primary-color);
+    padding-bottom: 0;
+    display: none;
+}
+
 /* the styles for the main element */
 main {
 	clear: left;
 	display: flex;
+    flex-direction: column;
 }
 
 /* the styles for the section */
@@ -127,4 +135,27 @@ nav {
 	& a.current:hover { 
 		font-style: normal; /* override default hover effect */
 	}
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        flex-direction: row; /* layout for larger screens */
+    }
+    
+    section {
+        order: 2;
+        flex-basis: 75%;
+    }
+    
+    aside {
+        order: 1;
+        flex-basis: 25%;
+    }
+}
+
+/* Media query dos*/
+@media screen and (min-width: 480px) {
+    header h2 {
+        display: block;
+    }
 }
